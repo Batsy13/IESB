@@ -1,0 +1,44 @@
+{
+    "noticias": [
+      {
+        "titulo": "Tecnologia revoluciona educação no Brasil",
+        "subtitulo": "Escolas adotam inteligência artificial para personalizar o ensino",
+        "data": "2025-05-20",
+        "imagem": "https://exemplo.com/imagens/educacao-ai.jpg",
+        "texto": "Com o avanço da IA, escolas públicas e privadas começaram a usar algoritmos para adaptar o conteúdo às necessidades de cada aluno.",
+        "autor": "Camila Oliveira"
+      },
+      {
+        "titulo": "Nova vacina brasileira contra dengue é aprovada",
+        "subtitulo": "Anvisa libera distribuição em todo o território nacional",
+        "data": "2025-05-18",
+        "imagem": "https://exemplo.com/imagens/vacina-dengue.jpg",
+        "texto": "A nova vacina promete proteger contra os quatro sorotipos do vírus da dengue, com eficácia superior a 85%.",
+        "autor": "Lucas Fernandes"
+      },
+      {
+        "titulo": "Mercado de trabalho para devs cresce 20% em 2025",
+        "subtitulo": "Startups puxam alta na demanda por programadores",
+        "data": "2025-05-15",
+        "imagem": "https://exemplo.com/imagens/devs-mercado.jpg",
+        "texto": "O setor de tecnologia continua aquecido, e especialistas indicam que a demanda por desenvolvedores full-stack e IA deve continuar em alta.",
+        "autor": "Renata Lima"
+      },
+      {
+        "titulo": "Feira de inovação apresenta robôs autônomos",
+        "subtitulo": "Evento reúne mais de 200 startups e universidades",
+        "data": "2025-05-10",
+        "imagem": "https://exemplo.com/imagens/feira-robotica.jpg",
+        "texto": "Robôs autônomos para agricultura, limpeza urbana e segurança foram destaque na feira nacional de inovação em Brasília.",
+        "autor": "João Batista"
+      },
+      {
+        "titulo": "Nova lei facilita acesso a internet em zonas rurais",
+        "subtitulo": "Projeto prevê subsídio para operadoras expandirem cobertura",
+        "data": "2025-05-05",
+        "imagem": "https://exemplo.com/imagens/internet-rural.jpg",
+        "texto": "O projeto aprovado no Congresso cria um fundo para incentivar a instalação de antenas e cabos de fibra ótica em áreas remotas.",
+        "autor": "Patrícia Souza"
+      }
+    ]
+  }
