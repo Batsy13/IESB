@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void bubbleSort(int arr[], int total)
+void bubbleSort(int arr[], int size)
 {
     int i, j, temp;
     int swapped;
 
-    for (i = 0; i < total - 1; i++)
+    for (i = 0; i < size - 1; i++)
     {
         swapped = 0;
 
-        for (j = 0; j < total - i - 1; j++)
+        for (j = 0; j < size - i - 1; j++)
         {
 
             if (arr[j] > arr[j + 1])
@@ -31,19 +31,19 @@ void bubbleSort(int arr[], int total)
 int main()
 {
     int arr[] = {72, 42, 10, 5, 24, 123, 2, 3, 13};
-    int n = sizeof(arr) / sizeof(int);
+    int size = sizeof(arr) / sizeof(int);
 
     printf("Before sort: \n");
-    for(int i = 0; i < n ; i++){
+    for(int i = 0; i < size ; i++){
         printf("%d ", arr[i]);
     }
     
     printf("\n-------------------------\n");
     
-    bubbleSort(arr, n);
+    bubbleSort(arr, size);
     
     printf("After sort: \n");
-    for(int i = 0; i < n ; i++){
+    for(int i = 0; i < size ; i++){
         printf("%d ", arr[i]);
     }
 
