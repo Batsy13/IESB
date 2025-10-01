@@ -11,7 +11,7 @@ int main() {
 
     std::ostringstream oss;
 
-    oss << "Hello, world from thread " << tid
+    oss << "Hello, world from thread " << tid + 1
         << " of " << tot << "\n";
 
     #pragma omp critical
