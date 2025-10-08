@@ -55,7 +55,7 @@ int main()
     std::cout << "Tempo TOTAL (s):    " << tempo_total << "\n";
 
     std::cout << "\nTempo por thread (s):\n";
-    for (int t = 0; t < threads_usadas; ++t)
+    for (int t = 0; t < threads_usadas; t++)
     {
         std::cout << "  Thread " << t << ": " << threads_time[t] << "\n";
     }
