@@ -29,7 +29,7 @@ int main()
     std::cout << "Insira c:";
     std::cin >> c_value;
 
-    std::vector<double> a(N, 1), b(N, -5), c(N, 6);
+    std::vector<double> a(N, a_value), b(N, b_value), c(N, c_value);
     
     double total_sum = 0;
 
@@ -40,7 +40,7 @@ int main()
     {
         double local_sum = bhaskara(a[i], b[i], c[i]);
 
-        #pragma omp critical
+        #pragma omp atomic
         total_sum += local_sum;
     }
 

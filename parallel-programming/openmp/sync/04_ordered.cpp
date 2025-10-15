@@ -29,26 +29,38 @@ int main()
     std::cout << "Insira c:";
     std::cin >> c_value;
 
-    std::vector<double> a(N, 1), b(N, -5), c(N, 6);
-    
+    std::vector<double> a(N, a_value), b(N, b_value), c(N, c_value);
+    std::vector<double> roots_sum(N);
+
     double total_sum = 0;
 
-    double T0 = omp_get_wtime();
+    double start_time = omp_get_wtime();
 
-    #pragma omp parallel for reduction(+:total_sum)
-    for (int i = 0; i < N; i++)
+    #pragma omp parallel
     {
-        double local_sum = bhaskara(a[i], b[i], c[i]);
+        int thread_id = omp_get_thread_num();
 
-        #pragma omp atomic
-        total_sum += local_sum;
+        #pragma omp for ordered
+        for (int i = 0; i < N; i++)
+        {
+            roots_sum[i] = bhaskara(a[i], b[i], c[i]);
+            
+            #pragma omp ordered
+            printf("Thread (id: %d) fez iteração %d\n", thread_id, i);
+        }
+
+        #pragma omp barrier
+
+        #pragma omp for ordered
+        for (int i = 0; i < N; i++)
+        {
+            #pragma omp ordered
+            std::cout << "roots_sum na posição " << i << " tem valor: " << roots_sum[i] << std::endl;
+        }
     }
 
-    double T1 = omp_get_wtime();
-
-    double total_time = (T1 - T0);
-
-    std::cout << "Soma total: " << total_sum << std::endl;
+    double final_time = omp_get_wtime();
+    double total_time = (final_time - start_time);
     std::cout << "Tempo Gasto: " << total_time << std::endl;
 
     return 0;
@@ -56,10 +68,9 @@ int main()
 
 double bhaskara(double a, double b, double c)
 {
-
     double b_squared, four_ac, delta, x1, x2;
 
-    #pragma omp parallel
+    #pragma omp parallel 
     {
         b_squared = (b * b);
         four_ac = (4 * a * c);
@@ -67,11 +78,12 @@ double bhaskara(double a, double b, double c)
 
     delta = b_squared - four_ac;
 
-    if (delta < 0){
+    if (delta < 0)
+    {
         return 0.0;
     }
 
-    #pragma omp parallel 
+    #pragma omp parallel
     {
         x1 = ((-b + sqrt(delta)) / (2 * a));
         x2 = ((-b - sqrt(delta)) / (2 * a));
