@@ -21,11 +21,12 @@ def bellman_ford(graph, start):
     return distances
 
 graph = {
-    'A': {'B': 1, 'C': 4},
-    'B': {'A': 1, 'C': 2, 'D': 5},
-    'C': {'A': 4, 'B': 2, 'D': 1},
-    'D': {'B': 5, 'C': 1}
+    'S': {'A': 3,'B': 5},
+    'A': {'C': -5, 'D': 8},
+    'B': {'A': 6, 'C': 8, 'D': -9},
+    'C': {'D': -3},
+    'D': {'S': 2}
 }
 
-shortest_path = bellman_ford(graph, 'A')
+shortest_path = bellman_ford(graph, 'S')
 print(shortest_path)
