@@ -36,8 +36,7 @@ int main (){
     
     #pragma omp parallel for reduction(+:sum_deviation)
     for(int i = 0; i < N; i++){
-        double desvios = salaries[i] - average;
-        sum_deviation = desvios * desvios;
+        sum_deviation = pow((salaries[i] - average), 2);
     }
 
     double sample_variance = sum_deviation / static_cast<double>(N - 1);
