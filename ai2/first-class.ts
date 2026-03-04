@@ -1,4 +1,4 @@
-function generatePopulation(populationSize, boundaries) {
+function generatePopulation(populationSize: number, boundaries: number[][]) {
   let population = [];
 
   for (let i = 0; i < populationSize; i++) {
