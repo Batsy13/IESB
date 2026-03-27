@@ -129,14 +129,14 @@ for g in range(500):
 melhor = pop[np.argmin([calcular_fitness(i) for i in pop])]
 
 # Gráfico de Convergência
-plt.figure(figsize=(10, 5))
-plt.plot(historico_melhor_fitness, color='red', label='Melhor Fitness')
-plt.title('Convergência do Algoritmo Genético')
-plt.xlabel('Geração')
-plt.ylabel('Valor de Fitness')
-plt.grid(True, linestyle='--', alpha=0.6)
-plt.legend()
-plt.show()
+# plt.figure(figsize=(10, 5))
+# plt.plot(historico_melhor_fitness, color='red', label='Melhor Fitness')
+# plt.title('Convergência do Algoritmo Genético')
+# plt.xlabel('Geração')
+# plt.ylabel('Valor de Fitness')
+# plt.grid(True, linestyle='--', alpha=0.6)
+# plt.legend()
+# plt.show()
 
 print("\n" + "="*195)
 print(f"{'DIA':<6} | {'DESJEJUM':<25} | {'ALMOÇO':<90} | {'LANCHE':<35} | {'JANTAR':<55}")
